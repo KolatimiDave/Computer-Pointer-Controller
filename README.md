@@ -44,12 +44,39 @@ Now, run the following command to run our application
         
 
 ## Benchmarks
-* The benchmark result of running my model on CPU with multiple model precisions are :
+* The benchmark result of running my models on Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz
+using DL workbench with multiple model precisions are :
 * Face Detection Model
 
-Precision | Latency(ms) | Throughput(fps)
+Precision | Latency (ms) | Throughput (fps)
 --------- | ------- | ---------
 FP32-FP16-Int8 | 94.91 | 30.16
+
+* Facial Landmark Regression Model
+
+Precision | Latency (ms) | Throughput (fps)
+--------- | ------- | ---------
+FP32 | 0.41 | 2249.26
+FP16 | 0.40 | 2232.52
+FP-16-Int8 | 0.44 | 2152.11
+
+* Head-Pose Estimation Model
+
+Precision | Latency (ms) | Throughput (fps)
+--------- | ------- | ---------
+FP32 | 2.1 | 459.66
+FP16 | 2.09 | 462.79
+FP-16-Int8 | 1.59 | 602.36
+
+* Gaze Estimation Model
+
+Precision | Latency (ms) | Throughput (fps)
+--------- | ------- | ---------
+FP32 | 2.61 | 371.35
+FP16 | 2.59 | 376.22
+FP-16-Int8 | 2.00 | 487.23
+
+
 
 ## Results
 
