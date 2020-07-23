@@ -12,15 +12,15 @@ To get up to speed on running this project, you'll need to setup your local envi
 * iv  Gaze Estimation [Model](https://docs.openvinotoolkit.org/latest/_models_intel_gaze_estimation_adas_0002_description_gaze_estimation_adas_0002.html)
 
 ## Demo
-* Step 1
+#### Step 1
 - Clone the repository: Open a new terminal and run the following command:-
 - cd <path_to_project_directory>/src
 
-* Step 2
+#### Step 2
 - source the openvino environment 
 - source /opt/intel/openvino/bin/setupvars.sh -pyver 3.6
 
-* Step 3
+#### Step 3
 Now, run the following command to run our application
 * python3.6 main.py -fdm <path_to_project_directory>/intel/face-detection-adas-binary-0001/FP32-INT1/face-detection-adas-binary-0001.xml -flm <path_to_project_directory>/intel/landmarks-regression-retail-0009/FP16/landmarks-regression-retail-0009.xml -hpm <path_to_project_directory>/intel/head-pose-estimation-adas-0001/FP16/head-pose-estimation-adas-0001.xml -gem <path_to_project_directory>/intel/gaze-estimation-adas-0002/FP16/gaze-estimation-adas-0002.xml -v <path_to_project_directory>/bin/demo.mp4
 
@@ -45,24 +45,11 @@ Now, run the following command to run our application
 
 ## Benchmarks
 * The benchmark result of running my model on CPU with multiple model precisions are :
+* Face Detection Model
 
-- INT8:
-
-The total model loading time is : 0.838sec
-The total inference time is : 0.699sec
-The total FPS is : 1.43fps
-- FP16:
-
-The total model loading time is : 0.731sec
-The total inference time is : 0.668sec
-The total FPS is : 1.498fps
-
-- FP32:
-
-The total model loading time is : 0.838sec
-The total inference time is : 0.665sec
-The total FPS is : 1.505fps
-
+Precision | Latency(ms) | Throughput(fps)
+--------- | ------- | ---------
+FP32-FP16-Int8 | 94.91 | 30.16
 
 ## Results
 
