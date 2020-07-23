@@ -62,7 +62,7 @@ FP32 | 0.41 | 2249.26
 FP16 | 0.40 | 2232.52
 FP16-Int8 | 0.44 | 2152.11
 
-- The FP16 precision gives the best latency and FP32 gives the best throughput. In a situation where speed is of utmost importance, 0.01(ms) will matter, else we can trade off latency for throughput. 
+The FP16 precision gives the best latency and FP32 gives the best throughput. In a situation where speed is of utmost importance, 0.01(ms) will matter, else we can trade off latency for throughput. 
 
 * Head-Pose Estimation Model
 
@@ -72,7 +72,7 @@ FP32 | 2.1 | 459.66
 FP16 | 2.09 | 462.79
 FP16-Int8 | 1.59 | 602.36
 
-- The FP16-Int8 precision gives the best latency and the best throughput. It is the most situable for this hardware. 
+The FP16-Int8 precision gives the best latency and the best throughput. It is the most situable for this hardware. 
 
 * Gaze Estimation Model
 
@@ -82,7 +82,7 @@ FP32 | 2.61 | 371.35
 FP16 | 2.59 | 376.22
 FP16-Int8 | 2.00 | 487.23
 
-- The FP16-Int8 precision gives the best latency and the best throughput. It is the most situable for this hardware. 
+The FP16-Int8 precision gives the best latency and the best throughput. It is the most situable for this hardware. 
 
 * Considering overall model performances, the Face Detection model has the heighest latency and gives the lowest throughput.
 
@@ -91,13 +91,12 @@ FP16-Int8 | 2.00 | 487.23
 From the above benchmark results obtained, faster inference is obtaned using less precision model. by reducing the precision, the usage of memory is less and its less computationally expensive when compared to higher precision models.
 
 ## Stand Out Suggestions
-I improved my model inference time by using multiple precisions of the models.
 
 ### Async Inference
 Using the start_async method will use the all cores of CPU and improve performance with threading which is the  ability to perform multiple inference at the same time compared to synchronous infer method. In synchrounous inference, the inference request need to be waiting until the other inference request executed therefore, it is more suitable to use async inference in this project
 
 ### Edge Cases
-* This project only works better when just one person has been detected in the frame. In the real condition, if you use webcam, we should deal with detected multiple persons. To deal with condition, If there are Multiple faces detected in the frame then the model takes the first detected face for control of the mouse pointer.
+* This project only works better when just one person has been detected in the frame. In real conditions, if you use webcam, we should deal with detected multiple persons. To deal with condition, If there are Multiple faces detected in the frame then the model takes the first detected face for control of the mouse pointer.
 
 * Some situations inference may break such as when the mouse moves to the corner of the frame.
 
