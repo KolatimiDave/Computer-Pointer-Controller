@@ -4,12 +4,12 @@ Computer Pointer Controller allows user to control the mouse movements with thei
 
 ## Project Set Up and Installation
 To get up to speed on running this project, you'll need to setup your local environment. Here are the main things to do:
-* Download and install the OpenVINO Toolkit[https://docs.openvinotoolkit.org/latest/index.html].
+* Download and install the [OpenVINO Toolkit](https://docs.openvinotoolkit.org/latest/index.html).
 * The models used in running the project *Already downloaded in the intel folder.
-i   Face Detection [Model](https://docs.openvinotoolkit.org/latest/_models_intel_face_detection_adas_binary_0001_description_face_detection_adas_binary_0001.html)
-ii  Facial Landmarks Detection [Model](https://docs.openvinotoolkit.org/latest/_models_intel_landmarks_regression_retail_0009_description_landmarks_regression_retail_0009.html)
-iii Head Pose Estimation [Model](https://docs.openvinotoolkit.org/latest/_models_intel_head_pose_estimation_adas_0001_description_head_pose_estimation_adas_0001.html)
-iv  Gaze Estimation [Model](https://docs.openvinotoolkit.org/latest/_models_intel_gaze_estimation_adas_0002_description_gaze_estimation_adas_0002.html)
+* i   Face Detection [Model](https://docs.openvinotoolkit.org/latest/_models_intel_face_detection_adas_binary_0001_description_face_detection_adas_binary_0001.html)
+* ii  Facial Landmarks Detection [Model](https://docs.openvinotoolkit.org/latest/_models_intel_landmarks_regression_retail_0009_description_landmarks_regression_retail_0009.html)
+* iii Head Pose Estimation [Model](https://docs.openvinotoolkit.org/latest/_models_intel_head_pose_estimation_adas_0001_description_head_pose_estimation_adas_0001.html)
+* iv  Gaze Estimation [Model](https://docs.openvinotoolkit.org/latest/_models_intel_gaze_estimation_adas_0002_description_gaze_estimation_adas_0002.html)
 
 ## Demo
 * Step 1
@@ -17,6 +17,10 @@ iv  Gaze Estimation [Model](https://docs.openvinotoolkit.org/latest/_models_inte
 - cd <path_to_project_directory>/src
 
 * Step 2
+- source the openvino environment 
+- source /opt/intel/openvino/bin/setupvars.sh -pyver 3.6
+
+* Step 3
 Now, run the following command to run our application
 * python3.6 main.py -fdm <path_to_project_directory>/intel/face-detection-adas-binary-0001/FP32-INT1/face-detection-adas-binary-0001.xml -flm <path_to_project_directory>/intel/landmarks-regression-retail-0009/FP16/landmarks-regression-retail-0009.xml -hpm <path_to_project_directory>/intel/head-pose-estimation-adas-0001/FP16/head-pose-estimation-adas-0001.xml -gem <path_to_project_directory>/intel/gaze-estimation-adas-0002/FP16/gaze-estimation-adas-0002.xml -v <path_to_project_directory>/bin/demo.mp4
 
