@@ -46,7 +46,7 @@ default value for probability threshold of all models is 0.5
         
 
 ## Benchmarks
-* The benchmark result of running my models on Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz
+The benchmark result of running my models on Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz
 using DL workbench with multiple model precisions are :
 * Face Detection Model
 
@@ -84,7 +84,7 @@ FP16-Int8 | 2.00 | 487.23
 
 The FP16-Int8 precision gives the best latency and the best throughput. It is the most situable for this hardware. 
 
-* Considering overall model performances, the Face Detection model has the heighest latency and gives the lowest throughput.
+##### Considering overall model performances, the Face Detection model has the heighest latency and gives the lowest throughput.
 
 ## Results
 
