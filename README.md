@@ -5,7 +5,7 @@ Computer Pointer Controller allows user to control the mouse movements with thei
 ## Project Set Up and Installation
 To get up to speed on running this project, you'll need to setup your local environment. Here are the main things to do:
 * Download and install the [OpenVINO Toolkit](https://docs.openvinotoolkit.org/latest/index.html).
-* The models used in running the project *Already downloaded in the intel folder.
+* The models used in running the project, * Already downloaded in the intel folder.
 * i   Face Detection [Model](https://docs.openvinotoolkit.org/latest/_models_intel_face_detection_adas_binary_0001_description_face_detection_adas_binary_0001.html)
 * ii  Facial Landmarks Detection [Model](https://docs.openvinotoolkit.org/latest/_models_intel_landmarks_regression_retail_0009_description_landmarks_regression_retail_0009.html)
 * iii Head Pose Estimation [Model](https://docs.openvinotoolkit.org/latest/_models_intel_head_pose_estimation_adas_0001_description_head_pose_estimation_adas_0001.html)
@@ -41,6 +41,8 @@ Now, run the following command to run our application
 *    -hpp, headpose_prob_threshold, specify probaility threshold for the head pose model
 *    -flp, facial_landmark_prob_threshold, specify probaility threshold for the facial landmark model
 *    -gep, gaze_estimation_prob_threshold, specify probaility threshold for the gaze estimation model
+
+- default value for probability threshold of all models is 0.5
         
 
 ## Benchmarks
@@ -58,7 +60,9 @@ Precision | Latency (ms) | Throughput (fps)
 --------- | ------- | ---------
 FP32 | 0.41 | 2249.26
 FP16 | 0.40 | 2232.52
-FP-16-Int8 | 0.44 | 2152.11
+FP16-Int8 | 0.44 | 2152.11
+
+- The FP16 precision gives the best latency and FP32 gives the best throughput. In a situation where speed is of utmost importance, 0.01(ms) will matter, else we can trade off latency for throughput. 
 
 * Head-Pose Estimation Model
 
@@ -66,7 +70,9 @@ Precision | Latency (ms) | Throughput (fps)
 --------- | ------- | ---------
 FP32 | 2.1 | 459.66
 FP16 | 2.09 | 462.79
-FP-16-Int8 | 1.59 | 602.36
+FP16-Int8 | 1.59 | 602.36
+
+- The FP16-Int8 precision gives the best latency and the best throughput. It is the most situable for this hardware. 
 
 * Gaze Estimation Model
 
@@ -74,17 +80,24 @@ Precision | Latency (ms) | Throughput (fps)
 --------- | ------- | ---------
 FP32 | 2.61 | 371.35
 FP16 | 2.59 | 376.22
-FP-16-Int8 | 2.00 | 487.23
+FP16-Int8 | 2.00 | 487.23
 
+- The FP16-Int8 precision gives the best latency and the best throughput. It is the most situable for this hardware. 
 
+* Considering overall model performances, the Face Detection model has the heighest latency and gives the lowest throughput.
 
 ## Results
+
+From the above benchmark results obtained, faster inference is obtaned using less precision model. by reducing the precision, the usage of memory is less and its less computationally expensive when compared to higher precision models.
 
 ## Stand Out Suggestions
 I improved my model inference time by using multiple precisions of the models.
 
 ### Async Inference
-If you have used Async Inference in your code, benchmark the results and explain its effects on power and performance of your project.
+Using the start_async method will use the all cores of CPU and improve performance with threading which is the  ability to perform multiple inference at the same time compared to synchronous infer method. In synchrounous inference, the inference request need to be waiting until the other inference request executed therefore, it is more suitable to use async inference in this project
 
 ### Edge Cases
-There will be certain situations that will break your inference flow. For instance, lighting changes or multiple people in the frame. Explain some of the edge cases you encountered in your project and how you solved them to make your project more robust.
+* This project only works better when just one person has been detected in the frame. In the real condition, if you use webcam, we should deal with detected multiple persons. To deal with condition, If there are Multiple faces detected in the frame then the model takes the first detected face for control of the mouse pointer.
+
+* Some situations inference may break such as when the mouse moves to the corner of the frame.
+
