@@ -26,21 +26,21 @@ Now, run the following command to run our application
 * The python main.py -h command displays the commands which are supported by
 -h, --help show this help message and exit
 
-   -fdm, face_detection_model, Path to .xml file of pretrained face detection model
-    -hpm, headpose_model, Path to .xml file of pretrained head pose estimation model
-    -flm, facial_landmark_model, Path to .xml file of pretrained facial landmark model
-    -gem, gaze_estimation_model, Path to .xml file of pretrained gaze estimation model
-    -d, device, specify target device to infer on, device can be: CPU, GPU, FPGA or MYRIAD. Default is CPU
-    -v, video_input, enter path to video file or cam to use webcam
-    -l, cpu_extension, specify path to cpu extension
-    -fdp, face_detection_prob_threshold, specify probaility threshold for the face detection model
-    -hpp, headpose_prob_threshold, specify probaility threshold for the head pose model
-    -flp, facial_landmark_prob_threshold, specify probaility threshold for the facial landmark model
-    -gep, gaze_estimation_prob_threshold, specify probaility threshold for the gaze estimation model
+*   -fdm, face_detection_model, Path to .xml file of pretrained face detection model
+*    -hpm, headpose_model, Path to .xml file of pretrained head pose estimation model
+*    -flm, facial_landmark_model, Path to .xml file of pretrained facial landmark model
+*    -gem, gaze_estimation_model, Path to .xml file of pretrained gaze estimation model
+*    -d, device, specify target device to infer on, device can be: CPU, GPU, FPGA or MYRIAD. Default is CPU
+*    -v, video_input, enter path to video file or cam to use webcam
+*    -l, cpu_extension, specify path to cpu extension
+*    -fdp, face_detection_prob_threshold, specify probaility threshold for the face detection model
+*    -hpp, headpose_prob_threshold, specify probaility threshold for the head pose model
+*    -flp, facial_landmark_prob_threshold, specify probaility threshold for the facial landmark model
+*    -gep, gaze_estimation_prob_threshold, specify probaility threshold for the gaze estimation model
         
 
 ## Benchmarks
-*The benchmark result of running my model on CPU with multiple model precisions are :
+* The benchmark result of running my model on CPU with multiple model precisions are :
 
 - INT8:
 
