@@ -42,7 +42,7 @@ Now, run the following command to run our application
 *    -flp, facial_landmark_prob_threshold, specify probaility threshold for the facial landmark model
 *    -gep, gaze_estimation_prob_threshold, specify probaility threshold for the gaze estimation model
 
-- default value for probability threshold of all models is 0.5
+default value for probability threshold of all models is 0.5
         
 
 ## Benchmarks
