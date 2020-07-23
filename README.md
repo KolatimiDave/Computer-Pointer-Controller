@@ -5,7 +5,7 @@ Computer Pointer Controller allows user to control the mouse movements with thei
 ## Project Set Up and Installation
 To get up to speed on running this project, you'll need to setup your local environment. Here are the main things to do:
 * Download and install the [OpenVINO Toolkit](https://docs.openvinotoolkit.org/latest/index.html).
-* The models used in running the project, * Already downloaded in the intel folder.
+* The models used in running the project, * already downloaded in the intel folder.
 * i   Face Detection [Model](https://docs.openvinotoolkit.org/latest/_models_intel_face_detection_adas_binary_0001_description_face_detection_adas_binary_0001.html)
 * ii  Facial Landmarks Detection [Model](https://docs.openvinotoolkit.org/latest/_models_intel_landmarks_regression_retail_0009_description_landmarks_regression_retail_0009.html)
 * iii Head Pose Estimation [Model](https://docs.openvinotoolkit.org/latest/_models_intel_head_pose_estimation_adas_0001_description_head_pose_estimation_adas_0001.html)
