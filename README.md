@@ -19,7 +19,7 @@ To get up to speed on running this project, you'll need to setup your local envi
 #### Step 2
 - source the openvino environment 
 - source /opt/intel/openvino/bin/setupvars.sh -pyver 3.6
-Also ensure to check setup.sh
+- Also ensure to check setup.sh
 
 #### Step 3
 Now, run the following command to run our application
