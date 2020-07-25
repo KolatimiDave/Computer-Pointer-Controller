@@ -47,12 +47,12 @@ default value for probability threshold of all models is 0.5
 
 
 ### Directory Structure
-* bin folder contains the media files
+* bin folder contains the media file
 
 * src folder contains python files of the app
 
   - main.py : Main python script to run the app
-  - model.p : contains python class to handle all models pre-processing.
+  - model.py : contains python class to handle all models pre-processing.
   - face_detection.py : Face Detection inference code
   - facial_landmarks_detection.py : Landmark Detection inference code
   - gaze_estimation.py : Gaze Estimation inference code
