@@ -19,7 +19,7 @@ To get up to speed on running this project, you'll need to setup your local envi
 #### Step 2
 - source the openvino environment 
 - source /opt/intel/openvino/bin/setupvars.sh -pyver 3.6
-- Also ensure to check setup.sh
+Also ensure to check setup.sh
 
 #### Step 3
 Now, run the following command to run our application
@@ -44,7 +44,36 @@ Now, run the following command to run our application
 *    -gep, gaze_estimation_prob_threshold, specify probaility threshold for the gaze estimation model
 
 default value for probability threshold of all models is 0.5
-        
+
+
+### Directory Structure
+bin folder contains the media files
+
+models folder contains pre-trained models from Open Model Zoo
+
+intel
+face-detection-adas-binary-0001
+gaze-estimation-adas-0002
+head-pose-estimation-adas-0001
+landmarks-regression-retail-0009
+src folder contains python files of the app
+
+main.py : Main python script to run the app
+model.p : contains python class to handle all models pre-processing.
+face_detection.py : Face Detection inference code
+facial_landmarks_detection.py : Landmark Detection inference code
+gaze_estimation.py : Gaze Estimation inference code
+head_pose_estimation.py : Head Pose Estimation inference code
+input_feeder.py : video input selection related code
+mouse_controller.py : Mouse Control related activities.
+README.md: Project Readme file which you're currently reading.
+requirements.txt: All the dependencies of the project are listed there
+
+setup.sh: one shot execution script that covers all the prerequisites of the project.
+v_tune.sh: script to use to check for hotspots in code using intel's Vtune Amplifier.
+
+
+
 
 ## Benchmarks
 The benchmark result of running my models on Intel(R) Core(TM) i7-4510U CPU @ 2.00GHz
