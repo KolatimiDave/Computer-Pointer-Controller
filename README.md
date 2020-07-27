@@ -61,11 +61,11 @@ default value for probability threshold of all models is 0.7
   - head_pose_estimation.py : Head Pose Estimation inference code
   - input_feeder.py : video input selection related code
   - mouse_controller.py : Mouse Control related activities.
-  - README.md: Project Readme file which you're currently reading.
-  - requirements.txt: All the dependencies of the project are listed there
+- README.md: Project Readme file which you're currently reading.
+- requirements.txt: All the dependencies of the project are listed there
 
-  - setup.sh: one shot execution script that covers all the prerequisites of the project.
-  - v_tune.sh: script to use to check for hotspots in code using intel's Vtune Amplifier.
+- setup.sh: one shot execution script that covers all the prerequisites of the project.
+- v_tune.sh: script to use to check for hotspots in code using intel's Vtune Amplifier.
 
 
 
