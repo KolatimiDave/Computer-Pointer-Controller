@@ -49,6 +49,8 @@ default value for probability threshold of all models is 0.7
 
 
 ### Directory Structure
+* intel folder contains model .xml and .bin files
+
 * bin folder contains the media file
 
 * src folder contains python files of the app
