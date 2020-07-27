@@ -14,7 +14,7 @@ To get up to speed on running this project, you'll need to setup your local envi
 ## Demo
 #### Step 1
 - Clone the repository: Open a new terminal and run the following command:-
-- cd <path_to_project_directory>/src
+- cd <path_to_project_directory>
 
 #### Step 2
 - source the openvino environment 
@@ -22,8 +22,10 @@ To get up to speed on running this project, you'll need to setup your local envi
 Also ensure to check setup.sh
 
 #### Step 3
-Now, run the following command to run our application
-* python3.6 main.py -fdm <path_to_project_directory>/intel/face-detection-adas-binary-0001/FP32-INT1/face-detection-adas-binary-0001.xml -flm <path_to_project_directory>/intel/landmarks-regression-retail-0009/FP16/landmarks-regression-retail-0009.xml -hpm <path_to_project_directory>/intel/head-pose-estimation-adas-0001/FP16/head-pose-estimation-adas-0001.xml -gem <path_to_project_directory>/intel/gaze-estimation-adas-0002/FP16/gaze-estimation-adas-0002.xml -v <path_to_project_directory>/bin/demo.mp4
+Now, to run the application:
+
+* python3.6 ./src/main.py -fdm /opt/intel/openvino/deployment_tools/tools/model_downloader/intel/face-detection-adas-binary-0001/FP32-INT1/face-detection-adas-binary-0001.xml -flm /opt/intel/openvino/deployment_tools/tools/model_downloader/intel/landmarks-regression-retail-0009/FP16-INT8/landmarks-regression-retail-0009.xml -hpm /opt/intel/openvino/deployment_tools/tools/model_downloader/intel/head-pose-estimation-adas-0001/FP16-INT8/head-pose-estimation-adas-0001.xml -gem /opt/intel/openvino/deployment_tools/tools/model_downloader/intel/gaze-estimation-adas-0002/FP16-INT8/gaze-estimation-adas-0002.xml -v ./bin/demo.mp4 -flags gaze_estimation head_pose_estimation facial_landmark_detection face_detection
+
 
 
 
@@ -43,7 +45,7 @@ Now, run the following command to run our application
 *    -flp, facial_landmark_prob_threshold, specify probaility threshold for the facial landmark model
 *    -gep, gaze_estimation_prob_threshold, specify probaility threshold for the gaze estimation model
 
-default value for probability threshold of all models is 0.5
+default value for probability threshold of all models is 0.7
 
 
 ### Directory Structure
@@ -52,7 +54,7 @@ default value for probability threshold of all models is 0.5
 * src folder contains python files of the app
 
   - main.py : Main python script to run the app
-  - model.py : contains python class to handle all models pre-processing.
+  - model.py : contains python class to handle model pre-processing.
   - face_detection.py : Face Detection inference code
   - facial_landmarks_detection.py : Landmark Detection inference code
   - gaze_estimation.py : Gaze Estimation inference code
