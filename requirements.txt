@@ -1,5 +1,5 @@
 pyautogui
-numpy==1.17.4
+numpy==1.22.0
 Pillow>=6.2.2
 requests==2.22.0
 virtualenv==20.0.16
